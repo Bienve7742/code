@@ -1,13 +1,13 @@
 function greet() {
-    console.log("Bienve");
+    let name = "Bienve"
+    console.log("Hello" + name);
 }
 
 greet();
 
 
-function add(a, b){
-    console.log(a+b);
+const add = function (a, b) {
+    console.log(a + b);
 };
-
-add(5+3);
+add(5, 3);
 
