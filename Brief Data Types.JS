@@ -3,7 +3,6 @@ score = 15;
 console.log(score);
 
 const pi = 3.14159;
-pi = 3;
 console.log(pi);
 
 const Name = "Bienve";
