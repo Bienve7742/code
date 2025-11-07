@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Homework</title>
+</head>
+
+<body>
+
+    <p id="info1"></p>
+    <p id="info2"></p>
+
+<script>
+    class Person {
+    constructor(name, age) {
+        this.name =  name;
+        this.age = age;
+    }
+
+    describe() {
+        return `${this.name} is ${this.age} years old.`;
+    }
+
+    static compareages(person1, person2) {
+        if (person1.age > person2.age) return `${person1.name} is older than `${person2.name},`;
+        else if (person1.age < person2.age) return `${ person2.name } is older than`${person1.name},`;
+        else return `${person1.name} and ${person2.name} are the same age.`;
+    }
+}
+
+class Student extends Person {
+    constructor(name, age, grade) {
+        super(name, age);
+        this.grade = grade;
+    }
+
+    introduce() {
+        return `${this.name} is a ${this.grade} grader and is ${this.age} years old.`;
+    }
+}
+
+const person1 = new Person("Ruben", 18);
+const student1 = new Student("Tina", 12, "6th");
+const student2 = new Student("Robin", 14, "8th");
+
+    document.getElementById("info1").innerHTML = person1.describe();
+    document.getElementById("info2").innerHTML = student1.introduce();
+    document.getElementById("info3").innerHTML = Person.compareAges(student1, student2);
+
+</script>
+</body>
