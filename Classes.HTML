@@ -23,7 +23,7 @@
         return `${this.name} is ${this.age} years old.`;
     }
 
-    static compareages(person1, person2) {
+    static compareAges(person1, person2) {
         if (person1.age > person2.age) return `${person1.name} is older than `${person2.name},`;
         else if (person1.age < person2.age) return `${ person2.name } is older than`${person1.name},`;
         else return `${person1.name} and ${person2.name} are the same age.`;
@@ -48,6 +48,7 @@ const student2 = new Student("Robin", 14, "8th");
     document.getElementById("info1").innerHTML = person1.describe();
     document.getElementById("info2").innerHTML = student1.introduce();
     document.getElementById("info3").innerHTML = Person.compareAges(student1, student2);
+
 
 </script>
 </body>
