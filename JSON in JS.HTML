@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript JSON Conversion</h2>
+    <h1 id="result"></h1>
+    <script>
+
+        let person = {
+            name: "John",
+            age: 25,
+            city: "New York"
+        };
+
+
+        let jsonString = JSON.stringify(person);
+
+
+        let personObj = JSON.parse(jsonString);
+
+
+        document.getElementById("result").innerHTML =
+            "Name: " + personObj.name + ", Age: " + personObj.age;
+    </script>
+</body>
+
+</html>
