@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-function validateForm() {
+</head>
+<body>
 
+    <form id="myForm">
+        Name: <input type="text" name="fname" required>
+        <br><br>
+
+        Age: <input type="text" name="fage" required>
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message" style="color:red;"></p>
+<script>
     const form = document.forms["myForm"];
     const message = document.getElementById("message");
 
-    if (!form.checkValidity()) {
-        message.style.color = "red";
-        message.textContent = "Please fill out all fields correctly.";
-        return false;
-    }
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();  // stop page from reloading
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();  // stop page from reloading
 
     var name = document.forms["myForm"]["fname"].value;
     var text = document.forms["myForm"]["fage"].value;
@@ -25,23 +37,18 @@ function validateForm() {
         return false;
     }
 
-    message.style.color = "green";
-    message.textContent = "Form is valid";
-    return true;
-}
+            // check if form is valid
+            if (form.checkValidity()) {
+                message.style.color = "green";
+                message.textContent = "Form is valid!";
+            } else {
+                message.style.color = "red";
+                message.textContent = "Please fill out all fields correctly.";
+            }
+        });
 
+})
 
 </script>
-</head>
-<body>
-
-<form name="myForm" onsubmit="return validateForm()">
-    Name: <input type="text" name="fname" required>
-    Age: <input type="text" name="fage" required>
-    <input type="submit" value="Submit">
-</form>
-
-<p id="message"></p>
-
 </body>
 </html>
