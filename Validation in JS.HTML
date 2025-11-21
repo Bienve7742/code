@@ -3,13 +3,34 @@
 <head>
 <script>
 function validateForm() {
-    var x = document.forms["myForm"]["fname"]["fage"].value;
-    if (x == "") {
+
+    const form = document.forms["myForm"];
+    const message = document.getElementById("message");
+
+    if (!form.checkValidity()) {
+        message.style.color = "red";
+        message.textContent = "Please fill out all fields correctly.";
+        return false;
+    }
+
+    var name = document.forms["myForm"]["fname"].value;
+    var age = document.forms["myForm"]["fage"].value;
+    if (name == "") {
         alert("Name must be filled out");
         return false;
     }
+
+    if (age == "") {
+        alert("Age must be filled out");
+        return false;
+    }
+
+    message.style.color = "green";
+    message.textContent = "Form is valid";
     return true;
 }
+
+
 </script>
 </head>
 <body>
