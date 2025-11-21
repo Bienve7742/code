@@ -14,13 +14,13 @@ function validateForm() {
     }
 
     var name = document.forms["myForm"]["fname"].value;
-    var age = document.forms["myForm"]["fage"].value;
+    var text = document.forms["myForm"]["fage"].value;
     if (name == "") {
         alert("Name must be filled out");
         return false;
     }
 
-    if (age == "") {
+    if (text == "") {
         alert("Age must be filled out");
         return false;
     }
@@ -37,7 +37,7 @@ function validateForm() {
 
 <form name="myForm" onsubmit="return validateForm()">
     Name: <input type="text" name="fname" required>
-    Age: <input type="number" name="fage" required>
+    Age: <input type="text" name="fage" required>
     <input type="submit" value="Submit">
 </form>
 
